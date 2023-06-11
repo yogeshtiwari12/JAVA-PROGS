@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class Employee{
+    int id ;
+    String name ;
+
+    public void printdetail(){
+        System.out.println("my id is = "+id);
+        System.out.println("my nam is = "+name);
+
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner yt = new Scanner(System.in);
+        System.out.println("this is oops");
+
+
+
+        Employee yt1 = new Employee();
+        Employee yt2 = new Employee();
+//        for yogesh
+        yt1.id = 12;
+        yt1.name = "yogesh";
+//for tanishq yadav
+
+
+        yt2.id = 98;
+        yt2.name ="tanishq yadav";
+
+//        System.out.println(yt1.id);
+//        System.out.println(yt1.name);
+        yt1.printdetail();
+        yt2.printdetail();
+
+
+
+    }
+}
