@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+//        System.out.println("dlbsbcsa");
+        System.out.print("Enter your marks : ");
+        Scanner yt =  new Scanner(System.in);
+
+        int m = yt.nextInt();
+        if(m>=90 && m<=99){
+            System.out.println("I postion");
+        }
+        else if(m>=80 && m<=89){
+            System.out.println("II position");
+        }
+        else if(m>=70 && m<=79){
+            System.out.println("III position");
+        }
+        else{
+            System.out.println(" IIII postion try hard and you got can do better next time ");
+        }
+    }
+}
