@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner yt = new Scanner(System.in);
+
+        String a = "yogesh";
+
+        System.out.println(a.length());
+        System.out.println(a.toLowerCase());
+        System.out.println(a.toUpperCase());
+//
+        String d = "         hello            ";
+        System.out.println(d);
+        System.out.println(d.trim());
+        System.out.println(a.substring(3));
+        System.out.println("sub "+a.substring(0,4));
+//        System.out.println(a.replace('y','t'));
+        System.out.println(a.replace("esh","jash"));
+
+        String b = "yogeshge";
+        System.out.println(a.startsWith("yog"));
+        System.out.println(a.endsWith("sh"));
+        System.out.println(a.charAt(4));
+        System.out.println(b.indexOf("ge",3));
+        System.out.println(a.lastIndexOf("h"));
+        System.out.println(a.equals("YOGESH"));
+        System.out.println(a.equalsIgnoreCase("ypgesh"));
+        System.out.println("yogesh \" good boy");
+
+
+
+
+    }
+}
