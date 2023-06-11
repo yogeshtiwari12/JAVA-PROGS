@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[]args){
+
+        Scanner yt = new Scanner(System.in);
+
+//        System.out.print("enter your name : ");
+
+//        int a = yt.nextInt();
+//        int b = yt.nextInt();
+//        int c = yt.nextInt();
+//        int d = yt.nextInt();
+//        int e = yt.nextInt();
+        int a = 7;
+        int b = ++a + a++ + ++a +4;
+        System.out.println(b);
+          String s = yt.nextLine();
+//
+
+        System.out.println("Hello "+ s + " have a good day");
+        System.out.println(64>5 && 64>8);
+
+
+    }
+}
