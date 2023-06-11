@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner yt = new Scanner(System.in);
+        System.out.print("Enter a : ");
+        int a = yt.nextInt();
+
+        System.out.print("Enter opeartor : ");
+        String c = yt.next();
+
+        System.out.print("Enter b : ");
+        int b = yt.nextInt();
+
+
+        switch(c){
+
+            case "+":
+                System.out.printf("sum of %d and %d is = %d",a,b,a+b);
+                break;
+
+
+            case "-":
+                System.out.printf("sub of %d and %d is = %d",a,b,a-b);
+                break;
+
+            case "*":
+                System.out.printf("mul of %d and %d is = %d",a,b,a*b);
+                break;
+
+            case "/":
+                System.out.printf("sum of %d and %d is = %d",a,b,a+b);
+                break;
+
+            case "**":
+                System.out.printf("sum of %d and %d is = %d",a,b,(int)Math.pow(a,b));
+                break;
+
+        }
+
+    }
+}
