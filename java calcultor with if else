@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner yt = new Scanner(System.in);
+        System.out.println("**************CLACULATOR********************");
+        System.out.print("Enter a : ");
+        int a = yt.nextInt();
+
+        System.out.print("enter operator : ");
+        String c = yt.next();
+
+        System.out.print("Enter b : ");
+        int b = yt.nextInt();
+
+
+        if(c.equals("+")){
+            System.out.printf("sum of %d and %d is : %d",a,b,a+b);
+        }
+        else if(c.equals("-")){
+            System.out.printf("sub of %d and %d is  : %d",a,b,a+b);
+
+        }
+        else if(c.equals("*")){
+            System.out.printf("mul of %d and %d is  : %d",a,b,a*b);
+
+        }
+        else if(c.equals("/")){
+            System.out.printf("sub of %d and %d is %d : %d",a,b,a/b);
+
+
+        }
+        else if(c.equals("**")){
+//            int d= (int)(Math.pow(a,b));
+            System.out.printf("sub of %d and %d is  : %d",a,b,(int)Math.pow(a,b));
+
+
+        }
+        else{
+            System.out.println("enter correct operator");
+        }
+
+
+    }
+}
