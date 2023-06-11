@@ -1,0 +1,34 @@
+//
+import java.util.Scanner;
+public class Main{
+    public static void main(String []args) {
+        Scanner yt = new Scanner(System.in);
+
+
+        String a = yt.nextLine();
+        String t1 = "";
+        char []arr = a.toCharArray();
+        char t;
+        int b = a.length();
+        for(int i =0;i<b/2;i++){
+           t  = arr[i];
+           arr[i] = arr[b-i-1];
+           arr[b-i-1] = t;
+        }
+        for(int i =0;i<b;i++) {
+            t1 += arr[i];
+//            System.out.print(arr[i]);
+        }
+        if(a.equals(t1)){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+
+//India: Rs.12,324.13
+//            sum1 = sum+Math.pow();
+
+    }
+
+}
