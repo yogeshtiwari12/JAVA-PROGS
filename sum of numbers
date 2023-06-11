@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+
+        Scanner yt = new Scanner(System.in);
+        System.out.println("enter num : ");
+        int a = yt.nextInt();
+
+        System.out.println("enter num : ");
+        int b = yt.nextInt();
+
+        System.out.println("enter num : ");
+        int c = yt.nextInt();
+
+
+        System.out.println("enter num : ");
+        int d = yt.nextInt();
+
+        System.out.println("enter num : ");
+        int e = yt.nextInt();
+
+        System.out.println("sum is = "+(a+b+c+d+e));
+
+
+
+    }
+}
