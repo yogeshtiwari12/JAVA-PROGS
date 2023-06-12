@@ -1,0 +1,57 @@
+import java.util.Scanner;
+import java.util.Random;
+class cyclinder{
+    private int r ;
+    private int h;
+    private String b;
+    public cyclinder(String  e,int id ){ // constructor
+        h = 4;
+        r = id;
+        b = e;
+    }
+    public void setrad(int ra){
+        this.r = ra;
+    }
+    public void setheight(int h1){
+        this.h = h1;
+    }
+    public int getvol(){
+        return (int) (3.14*r*r*h);
+    }
+    public int getsarae(){
+        return (int) (2*3.14*r*h);
+    }
+
+    public String getname(){
+        return b;
+    }
+    public int getid(){
+        return r;
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+//        Scanner yt = new Scanner(System.in);
+        cyclinder yt = new cyclinder("yogesh",84);//you have pass constructor variable here
+
+//        yt.setrad(5);
+//        yt.setheight(4);
+        System.out.println("volume is : "+yt.getvol());
+        System.out.println("s arae is : "+yt.getsarae());
+
+        System.out.println(yt.getname());
+        System.out.println(yt.getid());
+
+
+
+
+    }
+ }
+
+
+
+
+
+
