@@ -1,0 +1,64 @@
+import java.util.Scanner;
+import java.util.Random;
+class game {
+    int guss;
+    int number;
+    int user;
+
+    public void setNumber(int guss){
+        this.guss = guss;
+    }
+
+    public int getUser() {
+        return user;
+    }
+
+    game() {
+        Random yt1 = new Random();
+        number = yt1.nextInt(100);
+    }
+
+    void userinput() {
+        System.out.print("enter num : ");
+        Scanner yt = new Scanner(System.in);
+        user = yt.nextInt();
+
+
+    }
+
+    boolean chekcooret() {
+
+        guss++;
+            if (user == number) {
+
+                System.out.printf("you won you guess correct in %d attempts",guss);
+
+                return true;
+            } else if (user < number) {
+                System.out.println("too low");
+                return false;
+            } else {
+                System.out.println("too high");
+
+            return false;
+        }
+
+
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int max = 15;
+        int min = 10;
+//        Scanner  yt = new Scanner(
+        game yt3 = new game();
+        boolean b = false;
+        while (!b) {
+            yt3.userinput();
+            b = yt3.chekcooret();
+
+
+        }
+    }
+}
