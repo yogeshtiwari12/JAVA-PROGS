@@ -1,0 +1,204 @@
+# there are 3 ways ro set value in
+# constructor arguments
+# constructor arguments in class
+# with the help of getter 
+
+
+
+# constructor arguments in class
+
+import java.util.Scanner;
+import java.util.Random;
+class  cyclinder {
+    private int r;
+    private int h;
+
+
+    public cyclinder(int r, int h) {
+        this.r = r;
+        this.h = h;
+
+
+    }
+
+    public void setr(int r1) {
+        r = r1;
+
+    }
+
+    public void setH(int h1) {
+        h = h1;
+    }
+
+    public int geth() {
+        return h;
+    }
+
+    public int getr() {
+        return r;
+    }
+//        class rectangle{
+//            int l;
+//            int b;
+//
+//            public int setl(){
+//                return l;
+//            }
+//            public int setb(){
+//                return b;
+//            }
+//            public rectangle(int l1,int b1){
+//                int l = l1;
+//                int b = b1;
+//            }
+//        }
+//    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        cyclinder yt = new cyclinder(5,6);
+
+//        yt.setH(7);
+//        yt.setr(8);
+        System.out.println(yt.geth());
+        System.out.println(yt.getr());
+
+
+
+    }
+}
+
+
+# with the help of getter
+# seeter se set kro fir getter se print kro
+
+class  cyclinder {
+    private int r;
+    private int h;
+
+
+    public cyclinder() {
+        this.r = r;
+        this.h = h;
+
+
+    }
+
+    public void setr(int r1) {
+        r = r1;
+
+    }
+
+    public void setH(int h1) {
+        h = h1;
+    }
+
+    public int geth() {
+        return h;
+    }
+
+    public int getr() {
+        return r;
+    }
+//        class rectangle{
+//            int l;
+//            int b;
+//
+//            public int setl(){
+//                return l;
+//            }
+//            public int setb(){
+//                return b;
+//            }
+//            public rectangle(int l1,int b1){
+//                int l = l1;
+//                int b = b1;
+//            }
+//        }
+//    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        cyclinder yt = new cyclinder();
+
+        yt.setH(7);
+        yt.setr(8);
+        System.out.println(yt.geth());
+        System.out.println(yt.getr());
+
+
+
+    }
+}
+
+
+
+
+# constructor arguments
+
+class  cyclinder {
+    private int r;
+    private int h;
+
+
+    public cyclinder() {
+        this.r = 6;
+        this.h = 9;
+
+
+    }
+
+    public void setr(int r1) {
+        r = r1;
+
+    }
+
+    public void setH(int h1) {
+        h = h1;
+    }
+
+    public int geth() {
+        return h;
+    }
+
+    public int getr() {
+        return r;
+    }
+//        class rectangle{
+//            int l;
+//            int b;
+//
+//            public int setl(){
+//                return l;
+//            }
+//            public int setb(){
+//                return b;
+//            }
+//            public rectangle(int l1,int b1){
+//                int l = l1;
+//                int b = b1;
+//            }
+//        }
+//    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        cyclinder yt = new cyclinder();
+
+//        yt.setH(7);
+//        yt.setr(8);
+        System.out.println(yt.geth());
+        System.out.println(yt.getr());
+
+
+
+    }
+}
+
+
+
+
+
