@@ -27,9 +27,10 @@ class LL {
         } else {
             Node currentnode = head;
             while (currentnode != null) {
-                System.out.println(currentnode.data);
+                System.out.print(currentnode.data+"->");
                 currentnode = currentnode.next;
             }
+            System.out.println("null");
         }
     }
 
