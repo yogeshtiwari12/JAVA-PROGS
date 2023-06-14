@@ -1,0 +1,42 @@
+class LL {
+    Node head;
+
+    class Node {
+        String data;
+        Node next;
+
+        Node(String data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public void firstadd(String data) {
+        Node newnode = new Node(data);
+        if (head == null) {
+            head = newnode;
+            return;
+        }
+        newnode.next = head;
+        head = newnode;
+    }
+
+    public void print() {
+        if (head == null) {
+            System.out.println("empty");
+        } else {
+            Node currentnode = head;
+            while (currentnode != null) {
+                System.out.println(currentnode.data);
+                currentnode = currentnode.next;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        LL yt = new LL();
+        yt.firstadd("yogesh");
+        yt.firstadd("hello");
+        yt.print();
+    }
+}
