@@ -1,0 +1,123 @@
+ class LL {
+     Node head;
+     private int size ;
+
+     LL(){
+         this.size = 0;
+     }
+     class Node {
+         int data;
+         Node next;
+
+         Node(int data) {
+             this.data = data;
+             this.next = null;
+             size++;
+
+         }
+
+     }
+
+     public void addfirst(int data) {
+         Node newnode = new Node(data);
+         if (head == null) {
+             head = newnode;
+             return;
+         }
+         newnode.next = head;
+         head = newnode;
+     }
+
+     public void addlast(int data) {
+         Node newnode = new Node(data);
+         if (head == null) {
+             head = newnode;
+         }
+         Node currnode = head;
+         while (currnode.next != null) {
+             currnode = currnode.next;
+         }
+         currnode.next = newnode;
+
+     }
+
+
+     public void print(){
+         if (head == null) {
+             System.out.println("empty");
+         }
+         else{
+             Node newnode = head;
+             while (newnode != null) {
+                 System.out.print(newnode.data+"->");
+                 newnode = newnode.next;
+             }
+             System.out.println("null");
+
+         }
+
+     }
+
+
+     public void deletefirst(){
+         if(head==null){
+             System.out.println("list is empty");
+             return;
+
+         }
+         size--;
+         head = head.next;
+
+     }
+
+
+     public void deletelast(){
+
+         if(head==null){
+             System.out.println("list is empty");
+             return;
+         }
+         size--;
+         if(head.next==null){
+             head = null;
+         }
+         Node secondlast = head;
+         Node lastnode = head.next;
+         while(lastnode.next!=null){
+             lastnode = lastnode.next;
+             secondlast = secondlast.next;
+         }
+         secondlast.next = null;
+
+     }
+
+     public int getSize(){
+         return size;
+     }
+
+
+         public static void main (String[]args){
+         LL yt = new LL();
+         yt.addfirst(5);
+         yt.addfirst(4);
+         yt.addfirst(3);
+         yt.addfirst(2);
+         yt.addfirst(1);
+         yt.print();
+
+
+         yt.deletefirst();
+         yt.print();
+
+         yt.deletelast();
+         yt.print();
+
+         yt.addfirst(7);
+         yt.print();
+             System.out.println(yt.getSize());
+
+
+         }
+
+
+ }
