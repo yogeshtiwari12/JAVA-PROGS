@@ -1,0 +1,22 @@
+public void nthnode(int h){
+
+        if(head==null||head.next==null){
+            System.out.println("empty");
+            return;
+        }
+        if (h == size) {
+            head = head.next;
+            return;
+        }
+        Node curr = head;
+        int i =1;
+                int s1 = size-h;
+
+                while(i<s1){
+                    i++;
+                    curr = curr.next;
+                }
+        curr.next = curr.next.next;
+
+
+    }
