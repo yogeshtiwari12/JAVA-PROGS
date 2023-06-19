@@ -1,0 +1,5 @@
+  Node currnode = new Node(value);
+  Node temp = top;
+  temp.next = currnode.next;
+        currnode.next = temp;
+        size++;
