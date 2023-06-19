@@ -1,0 +1,61 @@
+class LL{
+    Node top;
+
+    class Node{
+        int data;
+        Node next;
+
+        Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public void push(int data){
+        Node newNode = new Node(data);
+        if(top==null){
+            top = newNode;
+        return ;
+        }
+        newNode.next = top;
+        top = newNode;
+    }
+
+    public void print() {
+        Node cuurNode = top;
+        if (cuurNode == null) {
+            System.out.println("null");
+            return;
+        }
+        while (cuurNode != null) {
+            System.out.println(cuurNode.data);
+            cuurNode = cuurNode.next;
+        }
+
+    }
+
+    public void pop(){
+        if(top==null){
+            System.out.println("null");
+        }
+        Node temp = top;
+        top = top.next;
+    }
+
+    public static void main(String [] args){
+        LL yt = new LL();
+        yt.push(1);
+        yt.push(2);
+        yt.push(3);
+        yt.push(4);
+        yt.push(5);
+//        yt.print();
+        yt.pop();
+        yt.pop();
+
+        yt.print();
+
+    }
+
+
+}
