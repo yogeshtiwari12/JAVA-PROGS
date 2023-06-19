@@ -1,0 +1,82 @@
+class LL{
+    private int size;
+    LL(){
+      this.size= 0;
+    }
+    Node top;
+    class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data = data;
+            this.next = null;
+            size++;
+        }
+
+    }
+
+    public void push(int data){
+        Node Newnode = new Node(data);
+        if(top==null){
+            top = Newnode;
+            return;
+        }
+        Newnode.next = top;
+        top = Newnode;
+    }
+    public int getSize(){
+        return size;
+    }
+    public void print() {
+        Node currnode = top;
+        if (currnode == null) {
+            System.out.println("empty linklist");
+            return;
+        } else {
+
+            while (currnode != null) {
+                System.out.print(currnode.data + "->");
+                currnode = currnode.next;
+            }
+            System.out.println("null");
+        }
+
+    }
+    public void append(int value) {
+        Node temp = new Node(value);
+        Node currnode = top;
+
+        if (currnode == null && currnode.next==null) {
+            System.out.println("empty");
+            return;
+        }
+
+        int j = (size / 2) + 1;
+        int i = 1;
+//        if(i==j){
+//            System.out.println("null");
+//            return ;
+//        }
+
+        while (i < j-1 ) {
+            currnode = currnode.next;
+            i++;
+        }
+
+        temp.next = currnode.next;
+        currnode.next = temp;
+        size++;
+    }
+    public static void main(String []args){
+        LL yt = new LL();
+        yt.push(5);
+        yt.push(4);
+        yt.push(3);
+        yt.push(2);
+//        yt.push(1);
+        yt.print();
+        yt.append(44);
+        yt.print();
+        System.out.println(yt.getSize());
+    }
+}
