@@ -1,0 +1,74 @@
+class stack{
+    private int size;
+    stack(){
+        this.size = 0;
+
+    }
+    Node top;
+    class Node{
+        int data ;
+        Node next;
+        Node(int data){
+            this.data= data;
+            this.next = null;
+            size++;
+        }
+    }
+    public void addfirst(int data){
+        Node newnode = new Node(data);
+        if(top==null){
+            top = newnode;
+            return;
+        }
+        newnode.next = top;
+        top = newnode;
+    }
+
+    public void pop(){ // it works on principle of lifo 
+        if(top==null){
+            System.out.println("null");
+            return;
+        }
+
+        else{
+            top = top.next;
+        }
+        size--;
+    }
+
+    public void print(){
+        Node currnode = top;
+        if(currnode==null){
+            System.out.println("empty");
+            return;
+        }
+        else {
+            while(currnode!=null){
+                System.out.println(currnode.data);
+                currnode = currnode.next;
+            }
+
+        }
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public static void main(String []args){
+        stack yt = new stack();
+        yt.addfirst(1);
+        yt.addfirst(2);
+        yt.addfirst(3);
+        yt.addfirst(4);
+        yt.addfirst(5);
+//        yt.pop();
+        yt.pop();
+        yt.print();
+
+        System.out.println("size of stack : "+yt.getSize());
+
+    }
+
+}
+
