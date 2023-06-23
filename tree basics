@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class Tree {
+    static Scanner scanner = new Scanner(System.in);
+
+    static class Node {
+        Node left;
+        Node right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+    }
+
+    static Node createTree() {
+        System.out.print("Enter the data (-1 to exit): ");
+        int data = scanner.nextInt();
+
+        if (data == -1) {
+            return null;
+        }
+
+        Node root = new Node(data);
+
+        System.out.println("Enter data for lef " + data);
+        root.left = createTree();
+
+        System.out.println("Enter the data for right " + data);
+        root.right = createTree();
+
+        return root;
+    }
+
+    public static void main(String[] args) {
+        Node root = createTree();
+
+        // Perform operations on the constructed tree if needed
+
+
+    }
+}
