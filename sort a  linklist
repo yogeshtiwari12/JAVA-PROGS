@@ -1,0 +1,20 @@
+public void sort(){
+        Node curr2 = head;
+        Node index = null;
+        int temp ;
+        if(curr2==null){
+            return;
+        }
+        while(curr2!=null){
+            index = curr2.next;
+            while(index!=null){
+                if(curr2.data> index.data){
+                    temp = curr2.data;
+                    curr2.data = index.data;;
+                    index.data = temp;
+                }
+                index = index.next;
+            }
+            curr2 = curr2.next;
+        }
+    }
