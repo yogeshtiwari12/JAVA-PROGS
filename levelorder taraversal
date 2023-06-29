@@ -1,0 +1,60 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+class tree{
+    static class Node{
+        Node right;
+        Node left;
+        int data;
+
+        Node(int data){
+            this.data =data;
+            this.right = null;
+        }
+    }
+     static Node createnode(){
+         Scanner yt = new Scanner(System.in);
+         System.out.println("enter data");
+         int data = yt.nextInt();
+         if(data==-1){
+             return null;
+         }
+         Node root = new Node(data);
+
+         System.out.println("enter data for left  :"+data);
+
+         root.left = createnode();
+
+         System.out.println("enter data for right : "+data);
+         root.right = createnode();
+
+         return root;
+    }
+
+    static void print(Node root){
+
+        if (root == null) {
+            return;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node curr = q.poll();
+            System.out.println(curr.data);
+            if(curr.left!=null){
+                q.add(curr.left);
+            }
+            if(curr.right!=null){
+                q.add(curr.right);
+
+            }
+        }
+    }
+    public static void main(String[]args){
+        Node root  =  createnode();
+        print(root);
+
+    }
+
+}
