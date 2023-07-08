@@ -1,0 +1,119 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your codeimp
+import java.util.HashMap;
+import java.util.Scanner;
+class data {
+    float balance;
+}
+
+class aTmop{
+    Scanner yt = new Scanner(System.in);
+
+  aTmop(){
+      System.out.println("--------------------------------------------");
+      System.out.println("Welcome In Atm : ");
+      op();
+
+  }
+
+  HashMap< Integer,data> map = new HashMap<>();
+
+  public void op(){
+      System.out.println();
+      System.out.println("--------------------------------------------");
+      System.out.println("Enter pincode : ");
+      int pincode = yt.nextInt();
+
+      if(map.containsKey(pincode)==true){
+          data obj = map.get(pincode);
+          menu(obj);
+      }
+      else{
+          System.out.println();
+          System.out.println("--------------------------------------------");
+          System.out.println("Please create Account first : ");
+          System.out.println("Enter pin : ");
+          int pin = yt.nextInt();
+          data obj = new data();
+          map.put(pin,obj);
+          menu(obj);
+
+      }
+  }
+
+  public void menu(data obj){
+      System.out.println();
+      System.out.println("--------------------------------------------");
+      System.out.println("1. enter to check balance :");
+      System.out.println("2. Withdraw :" );
+      System.out.println("3. Deposit : ");
+      System.out.println("4. Enter to check balance in another acoount :");
+      System.out.println("5. Exit :");
+
+
+      int ch = yt.nextInt();
+      System.out.println();
+      System.out.println("--------------------------------------------");
+      switch (ch){
+          case 1:
+              checkbalnce(obj);
+              break;
+
+          case 2:
+              withdraw(obj);
+              break;
+
+          case 3:
+              deposit(obj);
+              break;
+
+          case 4:
+              op();
+              break;
+          case 5:
+              System.out.println("Thank you !!! ");
+
+
+      }
+
+
+  }
+  public void checkbalnce(data obj){
+      System.out.println("Your balnce is : "+obj.balance);
+      menu(obj);
+
+  }
+  public void deposit(data obj){
+      System.out.println("Enter balance to Deposit :  ");
+      int a = yt.nextInt();
+      obj.balance = obj.balance+a;
+      System.out.println("Balnce Deposit Sucessfully : ");
+      menu(obj);
+  }
+
+  public void withdraw(data obj){
+      System.out.println("Enter Balance to withdraw :  ");
+      int value = yt.nextInt();
+
+      if(obj.balance>=value){
+          obj.balance = obj.balance-value;
+          System.out.println("Withdraw Sucessfully : ");
+          menu(obj);
+
+      }
+      else{
+          System.out.println("Insufficient Balance : ");
+          menu(obj);
+
+      }
+
+  }
+//
+//  public void anotheraccount(){
+//      +
+//  }
+
+    public static void main(String[] args) {
+        aTmop h = new aTmop();
+    }
+}
