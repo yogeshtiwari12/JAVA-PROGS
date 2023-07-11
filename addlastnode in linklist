@@ -1,0 +1,15 @@
+public void addlast(int value){
+        Node new2 = new Node(value);
+        if(head==null){
+            head = new2;
+            return;
+        }
+        else{
+            Node h2 = head;
+            while(h2.next!=null){
+                h2 = h2.next;
+            }
+            h2.next = new2;
+        }
+
+}
