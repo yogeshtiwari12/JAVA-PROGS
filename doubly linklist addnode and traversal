@@ -1,0 +1,50 @@
+class  DLL{
+    Node head;
+    class Node{
+        Node next;
+        Node prev ;
+
+        int data;
+        Node(int data){
+            this.next =null;
+            this.prev= null;
+            this.data = data;
+        }
+    }
+
+
+    public void addfirst(int data){
+        Node newnode = new Node(data);
+        newnode.next = head;
+        newnode.prev = null;
+        if(head!=null) {
+            head.prev = newnode;
+        }
+        head = newnode;
+    }
+    public void print() {
+        Node temp = head;
+        if (temp == null) {
+            System.out.println("null");
+            return;
+        } else {
+
+
+
+            while (temp != null) {
+                System.out.print(temp.data + "->");
+                temp= temp.next;
+            }
+            System.out.println("null");
+        }
+    }
+
+    public static void main(String[] args) {
+        DLL yt = new DLL();
+        yt.addfirst(1);
+        yt.addfirst(2);
+        yt.addfirst(3);
+        yt.addfirst(4);
+        yt.print();
+    }
+}
