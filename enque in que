@@ -1,0 +1,15 @@
+public void enque(int data){
+           if(front == -1 && rear ==-1){
+               rear++;
+
+               arr[front] = data;
+               front++;
+           }
+           else if(rear==arr.length-1){
+               System.out.println("q is full");
+           }
+           else{
+               rear = rear+1;
+               arr[rear] = data;
+           }
+           
