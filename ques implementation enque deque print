@@ -1,0 +1,58 @@
+class ques{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+
+
+
+        Node(int data){
+            this.data = data;
+            this.next = null;
+
+        }
+    }
+
+    public void enque(int data){
+        Node newnode = new Node(data);
+        if(head==null){
+            head = newnode;
+        }
+        else {
+            Node curr = head;
+            while (curr.next!=null){
+                curr = curr.next;
+            }
+            curr.next = newnode;
+        }
+    }
+
+    public void deque(){
+        if(head==null){
+            System.out.println("empyt");
+        }
+        int temp = head.data;
+        head = head.next;
+        System.out.println("deleted data :"+temp);
+
+    }
+    public void print(){
+        Node temp2 = head;
+        while (temp2!=null){
+            System.out.println(temp2.data);
+            temp2 = temp2.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        ques q = new ques();
+        q.enque(10);
+        q.enque(20);
+        q.enque(30);
+        q.enque(40);
+        q.deque();
+        q.deque();
+        q.print();
+    }
+
+}
