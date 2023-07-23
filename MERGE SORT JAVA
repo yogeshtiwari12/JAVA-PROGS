@@ -1,0 +1,58 @@
+public class Main {
+
+    public static void mergesort(int[] arr, int l, int mid, int r) {
+        int i = l;
+        int j = mid + 1;
+        int k = l;
+        int[] b = new int[arr.length];
+        while (i <= mid && j <= r) {
+            if (arr[i] < arr[j]) {
+                b[k] = arr[i];
+                i++;
+            } else {
+                b[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+
+            while (i <= mid) {
+                b[k] = arr[i];
+
+                k++;i++;
+
+        }
+
+            while (j <= r) {
+                b[k] = arr[j];
+
+                k++;j++;
+
+        }
+        // Copy the merged elements back to the original array 'arr'
+        for (k = l; k <= r; k++) {
+            arr[k] = b[k];
+        }
+    }
+
+    public static void mergeSort(int[] arr, int l, int r) {
+        if (l < r) {
+            int mid = (l + r) / 2;
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid + 1, r);
+            mergesort(arr, l, mid, r);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 4, 6, 2, 8, 4, 5};
+        int l = 0;
+        int r = arr.length - 1;
+        mergeSort(arr, l, r);
+
+        // Print the sorted array
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
