@@ -1,0 +1,88 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+class  tree {
+    Node head;
+    static class Node{
+        Node left;
+        Node right;
+        int data;
+
+         Node(int data){
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+    }
+    public static Node createnode(){
+
+
+        System.out.println("enter data : ");
+        Scanner yt = new Scanner(System.in);
+        int data = yt.nextInt();
+
+        if(data==-1){
+            return null;
+        }
+        Node root = new Node(data);
+        System.out.println("enter data for left : "+data);
+        root.left = createnode();
+        System.out.println("enter data for right : "+data);
+        root.right = createnode();
+
+        return root;
+    }
+
+
+    public static Node insert(Node root,int key){
+        Node new2 = new Node(key);
+        Node cur = root;
+        Node parent = null;
+
+        while (cur!=null){
+            parent = cur;
+
+            if(key<cur.data){
+                cur = cur.left;
+            }
+            else{
+                cur = cur.right;
+            }
+        }
+        if(parent == null){
+            return new2;
+        }
+        else if (key<parent.data) {
+            parent.left = new2;
+        }
+        else {
+            parent.right = new2;
+        }
+
+return parent;
+    }
+    public static void addNode(Node root){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()){
+            Node curr = q.poll();
+            System.out.println(curr.data);
+
+            if(curr.left!=null){
+                q.add(curr.left);
+            }
+
+            if(curr.right!=null){
+                q.add(curr.right);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Node root = createnode();
+        insert(root,7);
+        addNode(root);
+
+    }
+}
