@@ -1,0 +1,86 @@
+import java.util.Locale;
+
+class LL{
+    Node head;
+    class Node{
+        Node next;
+        int data;
+        Node(int  data){
+            this.next = null;
+            this.data = data;
+
+        }
+    }
+
+    public void addNode(int data){
+        Node newnode = new Node(data);
+
+        if(head ==null){
+            head= newnode;
+            return;
+        }
+        newnode.next = head;
+        head = newnode;
+
+
+    }
+    public void print(){
+        if(head==null){
+            System.out.println("empyt ");
+            return;
+        }
+        else {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data+"->");
+                temp = temp.next;
+            }
+            System.out.println("null");
+        }
+    }
+public void deltelast(){
+        if(head==null){
+            System.out.println("empty");
+        }
+        if(head.next==null){
+            head = null;
+
+        }
+        Node first = head;
+        Node last = head;
+
+        while (last.next.next!=null){
+            last = last.next;
+            first = first.next;
+        }
+        first.next = null;
+
+
+}
+    public void deletefirst(){
+    if(head==null){
+        System.out.println("empyt");
+    }
+        head = head.next;
+    }
+    public static void main(String[] args) {
+        LL yt = new LL();
+        yt.addNode(10);
+        yt.addNode(20);
+        yt.addNode(30);
+        yt.addNode(40);
+        yt.addNode(50);
+
+        yt.deletefirst();
+        yt.print();
+//        yt.lastnode();
+//        yt.addlast(56);
+        yt.deltelast();
+        yt.print();
+
+//        yt.deltelast();
+
+    }
+
+
+}
