@@ -1,0 +1,249 @@
+import java.util.Scanner;
+
+class StringAssignment {
+    public static void trim(String str) {
+        System.out.println("String after trim : "+str.trim());
+    }
+
+    public static int charCount(String str) {
+
+        System.out.println(str.length());
+        return str.length();
+    }
+
+
+    public static int frequenceCount(String str, char ch){
+        int c = 0;
+//        char []ch1 = str.toCharArray();
+        for(int i = 0;i<str.length();i++){
+            if(ch ==str.charAt(i)){
+                c++;
+            }
+        }
+        System.out.println("frequency : "+c);
+        return c;
+    }
+
+
+    public static int frequencyWord(String str, String str1){
+      String []str2 = str.split("\\s+");
+      int count = 0;
+      for(String st : str2){
+          if(st.equals(str1)){
+              count++;
+          }
+      }
+        System.out.println("count word : "+count);
+      return count;
+    }
+
+
+
+    public static int myCompare(String str1, String str2){
+          if(str1.length()==str2.length()) {
+
+              for (int i = 0; i < str1.length(); i++) {
+                  if (str1.charAt(i) == str2.charAt(i)) ;
+              }
+              System.out.println("true");
+              return 1;
+
+          }
+          else {
+              System.out.println("false ");
+              return -1;
+          }
+    }
+
+
+
+
+    public static boolean myEquals(String str1, String str2){
+//        char []ch = str1.toCharArray();
+//        char []ch2  = str2.toCharArray();
+
+        if(str1.length()==str2.length()){
+            int bool = 0;
+
+
+        for(int i = 0;i<str1.length();i++){
+            char ch = str1.charAt(i);
+            char ch2 = str2.charAt(i);
+
+            if(ch!=ch2){
+                System.out.println("false");
+               return false;
+
+            }
+        }
+
+        }
+        System.out.println("true");
+        return true;
+
+
+    }
+
+
+
+    public static String replace(String str, String str1, String str2) {
+        if (str == null || str1 == null || str2 == null) {
+            System.out.println("Entered string cannot be null.");
+            return str; // Return the original string in case of null inputs.
+        } else {
+            String re = str.replaceAll(str1, str2);
+            return re;
+        }
+    }
+
+
+
+    public static int spaceCount(String str){
+        int cou = 0;
+              for(int i = 0;i<str.length();i++){
+                  if(str.charAt(i)==' '){
+                    cou++;
+                  }
+              }
+        System.out.println("space : "+cou);
+              return cou;
+    }
+
+
+    public static int vowelCount(String str) {
+        int c = 0;
+
+        for(char ch : str.toCharArray()){
+            if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'){
+                c++;
+            }
+
+        }
+        System.out.println("vowel= " + c);
+        return (c);
+    }
+
+    public static void main(String[] args) {
+
+
+        Scanner yt1 = new Scanner(System.in);
+
+
+        System.out.println("Enter choice : ");
+        System.out.println("1.trim \n" +
+                "2.Charcount \n" +
+                "3.frequencycount \n" +
+                "4.frquencyword \n" +
+                "5.mycompare \n" +
+                "6.My equals \n" +
+                "7.Repalce \n" +
+                "8.Spacecount \n" +
+                "9.VowelCount");
+        int choice = yt1.nextInt();
+        yt1.nextLine();
+
+        switch (choice){
+            case 1:
+                System.out.print("enter  str for trim : ");
+                String s = yt1.nextLine();
+                trim(s);
+                break;
+
+            case 2:
+                System.out.print("Enter string for char count method : ");
+                String charcoutn1 = yt1.nextLine();
+                charCount(charcoutn1);
+                break;
+
+            case 3:
+                System.out.println("Enter String for frequency count : ");
+                String frqcout = yt1.nextLine();
+
+                System.out.print("enter char  : ");
+                 char ch1 = yt1.next().charAt(0);
+
+                frequenceCount(frqcout,ch1);
+                break;
+
+            case 4:
+                System.out.print("enter str1 :  ");
+                String strr = yt1.nextLine();
+
+                System.out.print("enter str2 for search : ");
+                String ch2  = yt1.nextLine();
+
+                frequencyWord(strr,ch2);
+                break;
+
+            case 5:
+                System.out.print("input str2 for  my comapre : ");
+                String str1 = yt1.nextLine();
+
+                System.out.println("input str2 for  my comapre : ");
+                String str2 = yt1.nextLine();
+
+
+                System.out.println("output my compare : ");
+                myCompare(str1,str2);
+                break;
+
+
+            case 6:
+                System.out.println("enter string for my equal : ");
+                String my1 = yt1.nextLine();
+
+                System.out.println("enter 2nd string for my equal : ");
+                String my2 = yt1.nextLine();
+
+                myEquals(my1,my2);
+                break;
+
+            case 7:
+
+                System.out.println("Enter the myrepalce method : ");
+                String input = yt1.nextLine();
+
+                System.out.println("Enter the string to replace: ");
+                String se1 = yt1.nextLine();
+
+                System.out.println("Enter the replacement string: ");
+                String re1= yt1.nextLine();
+
+                String modifiedString = replace(input, se1, re1);
+                System.out.println("Modified string: " + modifiedString);
+                break;
+
+            case 8:
+
+            System.out.println("eneter string for space count method  : ");
+            String scout = yt1.nextLine();
+            System.out.println("output Spacecount ");
+
+            spaceCount(scout);
+
+            break;
+
+
+            case 9:
+                System.out.println("enter string for vowel count : ");
+                String vowelcount = yt1.nextLine();
+                System.out.println("output my vowelcount :  ");
+                vowelCount(vowelcount);
+
+                break;
+
+
+
+            default:
+                System.out.println("enetr a valid choice :  ");
+
+
+
+        }
+
+
+
+    }
+}
+
+
