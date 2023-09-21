@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        String s  = "yoogeshyyy";
+        int []ch = new int[256];
+
+       for(char j: s.toCharArray()){
+           ch[j]++;
+       }
+
+       char s2 = ' ';
+       int c= 0;
+
+      for(char i = 0;i<ch.length;i++){
+          if(ch[i]>c){
+              s2 = i;
+
+          }
+      }
+        System.out.println(s2);
+    }
+}
