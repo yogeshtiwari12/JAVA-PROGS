@@ -11,8 +11,6 @@ class  DLL{
             this.data = data;
         }
     }
-
-
     public void addfirst(int data){
         Node newnode = new Node(data);
         newnode.next = head;
